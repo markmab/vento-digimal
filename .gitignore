@@ -26,9 +26,6 @@ coverage
 # Bower dependency directory (https://bower.io/)
 bower_components
 
-# Travis
-.travis.yml
-
 # node-waf configuration
 .lock-wscript
 
