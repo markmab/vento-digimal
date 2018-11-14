@@ -1,0 +1,24 @@
+<%- include('../header') %>
+  <a class="btn btn-light" href="/reviewers/nova">Novo Reviewer</a>
+  <a class="btn btn-light" href="/posts/nova">Novo Post</a><br>
+    <table class="table table-hover table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Reviewer</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% reviewers.forEach(reviewer => { %>
+          <tr>
+            <td scope="row"><a href="/posts/reviewer/<%= reviewer.id %>"><%= reviewer.reviewer %></a></td>
+            <td>
+            <a href="/reviewers/editar/<%= reviewer.id %>"> Editar </a>
+            <a href="/reviewers/excluir/<%= reviewer.id %>"> Excluir </a> <br>
+            </td>
+          </tr>
+          <% }) %>          
+        </tbody>
+      </table>
+  
+  <%- include('../footer') %>

@@ -1,0 +1,9 @@
+<%- include('../header') %>
+  <form action="/reviewers/editar/<%= reviewer.id %>" method="POST">
+  <div class="form-group">
+    <label for="reviewer">reviewer</label>
+    <input type="text" class="form-control" id="reviewer" name="reviewer" aria-describedby="emailHelp" placeholder="Digite a reviewer" value="<%= reviewer.reviewer %>">
+  </div>  
+  <button type="submit" class="btn btn-primary">Salvar</button>
+  </form>
+<%- include('../footer') %>

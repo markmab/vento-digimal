@@ -1,0 +1,52 @@
+<%- include('../header') %>
+  <form action="/posts/editar/<%= reviewer %>/<%= post.id %>" method="POST">
+    <div class="form-group">
+      <label for="titulo">Título</label>
+      <input type="text" class="form-control" id="titulo" name="titulo" aria-describedby="emailHelp" value="<%= post.titulo %>">
+    </div>    
+    <div class="form-group">
+      <label for="conteudo">Conteúdo</label>
+      <textarea type="text" class="form-control" id="conteudo" name="conteudo" aria-describedby="emailHelp"><%= post.conteudo %></textarea>
+    </div>
+    <div class="form-group">
+      <label for="keywords">Keywords</label>
+      <input type="text" class="form-control" id="keywords" name="keywords" aria-describedby="emailHelp" value="<%= post.keywords %>">
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" name="description" aria-describedby="emailHelp" value="<%= post.description %>">
+    </div>
+    <div class="form-group">
+      <label for="ogTitle">og:title</label>
+      <input type="text" class="form-control" id="ogTitle" name="ogTitle" aria-describedby="emailHelp" value="<%= post.ogTitle %>">
+    </div>
+    <div class="form-group">
+      <label for="ogDescription">og:description</label>
+      <input type="text" class="form-control" id="ogDescription" name="ogDescription" aria-describedby="emailHelp" value="<%= post.ogDescription %>">
+    </div>
+    <div class="form-group">
+      <label for="ogImage">og:image</label>
+      <input type="text" class="form-control" id="ogImage" name="ogImage" aria-describedby="emailHelp" value="<%= post.ogImage %>">
+    </div>
+    <div class="form-group">
+      <label for="robots">Robots</label>
+      <input type="text" class="form-control" id="robots" name="robots" aria-describedby="emailHelp" value="<%= post.robots %>">
+    </div>
+    <div class="form-group">
+      <label for="referrer">Referrer</label>
+      <input type="text" class="form-control" id="referrer" name="referrer" aria-describedby="emailHelp" value="<%= post.referrer %>">
+    </div>
+    <div class="form-group">
+      <label for="applicationName">Application-Name</label>
+      <input type="text" class="form-control" id="applicationName" name="applicationName" aria-describedby="emailHelp" value="<%= post.applicationName %>">
+    </div><div class="form-group">
+      <label for="XUACompatible">XUA-Compatible</label>
+      <input type="text" class="form-control" id="XUACompatible" name="XUACompatible" aria-describedby="emailHelp" value="<%= post.XUACompatible %>">
+    </div><div class="form-group">
+      <label for="refresh">Refresh</label>
+      <input type="text" class="form-control" id="refresh" name="refresh" aria-describedby="emailHelp" value="<%= post.refresh %>">
+    </div>    
+    <button type="submit" class="btn btn-primary">Salvar</button>
+  </form>
+<%- include('../footer') %>

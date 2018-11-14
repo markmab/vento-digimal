@@ -1,0 +1,59 @@
+<%- include('../header') %>
+  <form action="/posts/nova" method="POST">
+    <div class="form-group">
+      <label for="titulo">Título</label>
+      <input type="text" class="form-control" id="titulo" name="titulo" aria-describedby="emailHelp" placeholder="Digite o título">
+    </div>  
+    <div class="form-group">
+      <label for="reviewer">Reviewer</label>
+      <select id="reviewer" name="reviewer" aria-describedby="emailHelp" class="form-control">
+        <% reviewers.forEach( reviewer => { %>
+          <option value="<%= reviewer.id %>"><%= reviewer.reviewer %></option>
+        <% }) %>   
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="conteudo">Conteúdo</label>
+      <textarea type="text" class="form-control" id="conteudo" name="conteudo" aria-describedby="emailHelp" placeholder="Digite o conteúdo"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="keywords">Keywords</label>
+      <input type="text" class="form-control" id="keywords" name="keywords" aria-describedby="emailHelp" placeholder="keywords">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" name="description" aria-describedby="emailHelp" placeholder="description">
+    </div>
+    <div class="form-group">
+      <label for="ogTitle">og:title</label>
+      <input type="text" class="form-control" id="ogTitle" name="ogTitle" aria-describedby="emailHelp" placeholder="og:title">
+    </div>
+    <div class="form-group">
+      <label for="ogDescription">og:description</label>
+      <input type="text" class="form-control" id="ogDescription" name="ogDescription" aria-describedby="emailHelp" placeholder="og:description">
+    </div>
+    <div class="form-group">
+      <label for="ogImage">og:image</label>
+      <input type="text" class="form-control" id="ogImage" name="ogImage" aria-describedby="emailHelp" placeholder="og:image">
+    </div>
+    <div class="form-group">
+      <label for="robots">Robots</label>
+      <input type="text" class="form-control" id="robots" name="robots" aria-describedby="emailHelp" placeholder="robots">
+    </div>
+    <div class="form-group">
+      <label for="referrer">Referrer</label>
+      <input type="text" class="form-control" id="referrer" name="referrer" aria-describedby="emailHelp" placeholder="og:referer">
+    </div>
+    <div class="form-group">
+      <label for="applicationName">Application-Name</label>
+      <input type="text" class="form-control" id="applicationName" name="applicationName" aria-describedby="emailHelp" placeholder="application-name">
+    </div><div class="form-group">
+      <label for="XUACompatible">XUA-Compatible</label>
+      <input type="text" class="form-control" id="XUACompatible" name="XUACompatible" aria-describedby="emailHelp" placeholder="X-UA-Compatible">
+    </div><div class="form-group">
+      <label for="refresh">Refresh</label>
+      <input type="text" class="form-control" id="refresh" name="refresh" aria-describedby="emailHelp" placeholder="refresh">
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+  </form>
+<%- include('../footer') %>

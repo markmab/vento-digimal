@@ -1,0 +1,26 @@
+<%- include('../header') %>
+  <%= console.log(posts) %>
+  <a class="btn btn-light" href="/posts/nova">Nova Publicação</a> <br>
+    <table class="table table-hover table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Reviewer</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% posts.forEach(post => { %>
+          <tr>
+            <td>
+                <%= post.titulo %>
+            <td>
+            <a href="/posts/editar/<%= reviewer %>/<%= post.id %>/"> Editar </a>
+            <a href="/posts/excluir/<%= reviewer %>/<%= post.id %>/"> Excluir </a> <br>
+            </td>
+          </tr>
+          <% }) %>          
+        </tbody>
+      </table>
+
+  
+  <%- include('../footer') %>
