@@ -4,11 +4,13 @@ let now = new Date()
 
 const novaForm = async (req, res) => {
   const reviewers = await api.listar('reviewers')
-  res.render('posts/nova', { reviewers })
+  res.render('posts/novo-post', { reviewers })
 }
 const nova = async (req, res) => {
   await api.create('posts/' + req.body.reviewer, {
     'titulo': req.body.titulo,
+    'subTitulo': req.body.subTitulo,
+    'slug': req.body.slug,
     'conteudo': req.body.conteudo,
     'keywords': req.body.keywords,
     'description': req.body.description,

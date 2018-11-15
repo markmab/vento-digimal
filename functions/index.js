@@ -4,6 +4,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const reviewers = require('./routes/reviewers')
 const posts = require('./routes/posts')
+const leads = require('./routes/leads')
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded())
@@ -18,12 +19,18 @@ app.get('/timestamp', (request, response) => {
 })
 
 const resolver = (req, res) => {
-  res.render('index')
+  res.render('posts/single-post')
 }
 
 app.get('/', resolver)
 
-app.use('/reviewers', reviewers)
 app.use('/posts', posts)
-
+app.use('/reviewers', reviewers)
+app.use('/leads', leads)
 exports.app = functions.https.onRequest(app)
+
+app.listen('5000', (err) => {
+  if (err) {
+    console.log(err)
+  }
+})
