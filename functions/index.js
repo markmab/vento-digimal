@@ -8,7 +8,8 @@ const leads = require('./routes/leads')
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded())
-app.use(express.static('public'))
+
+app.use('/static', express.static('public'))
 
 app.get('/timestamp', (request, response) => {
   response.send(`${Date.now()}`)
@@ -27,10 +28,11 @@ app.get('/', resolver)
 app.use('/posts', posts)
 app.use('/reviewers', reviewers)
 app.use('/leads', leads)
+
 exports.app = functions.https.onRequest(app)
 
-app.listen('5000', (err) => {
-  if (err) {
-    console.log(err)
-  }
-})
+// app.listen('5000', (err) => {
+//   if (err) {
+//     console.log(err)
+//   }
+// })

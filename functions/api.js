@@ -19,6 +19,12 @@ const listarPosts = async (id) => {
   }
   return []
 }
+
+const listarSingle = async (rev, id) => {
+  // const content = await axios.get(`${baseURL}posts/${rev}/${id}.json`)
+  const content = await axios.get(`${baseURL}posts/-LRMDPuDapCmJFJSo_9S/${id}.json`)
+  return content.data
+}
 const listar = async (key) => {
   const content = await axios.get(`${baseURL + key}.json`)
 
@@ -56,6 +62,7 @@ const create = async (key, data) => {
 module.exports = {
   listar,
   listarPosts,
+  listarSingle,
   apagar,
   get,
   update,

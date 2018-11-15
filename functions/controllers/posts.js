@@ -35,6 +35,12 @@ const list = async (req, res) => {
     res.render('posts/index', { posts: [] })
   }
 }
+const listSingle = async (req, res) => {
+  const post = await api.listarSingle(req.params.reviewer, req.params.id)
+
+  // res.send(post)
+  res.render('posts/single-post', { post })
+}
 const listPosts = async (req, res) => {
   const reviewer = req.params.reviewer
   const posts = await api.listarPosts(req.params.id)
@@ -64,5 +70,5 @@ const editar = async (req, res) => {
   res.redirect(`/posts/reviewer/${req.params.reviewer}/`)
 }
 module.exports = {
-  novaForm, nova, list, excluir, editarForm, editar, listPosts
+  novaForm, nova, list, excluir, editarForm, editar, listPosts, listSingle
 }
