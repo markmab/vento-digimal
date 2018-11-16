@@ -20,7 +20,7 @@ app.get('/timestamp', (request, response) => {
 })
 
 const resolver = (req, res) => {
-  res.render('posts/single-post')
+  res.render('index')
 }
 
 app.get('/', resolver)
@@ -31,7 +31,7 @@ app.use('/leads', leads)
 
 exports.app = functions.https.onRequest(app)
 
-// app.listen('5000', (err) => {
+// app.listen('3000', (err) => {
 //   if (err) {
 //     console.log(err)
 //   }

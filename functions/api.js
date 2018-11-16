@@ -20,11 +20,19 @@ const listarPosts = async (id) => {
   return []
 }
 
-const listarSingle = async (rev, id) => {
-  // const content = await axios.get(`${baseURL}posts/${rev}/${id}.json`)
-  const content = await axios.get(`${baseURL}posts/-LRMDPuDapCmJFJSo_9S/${id}.json`)
-  return content.data
+// const listarSingle = async (rev, id) => {
+//   const content = await axios.get(`${baseURL}posts/-LRMDPuDapCmJFJSo_9S/${id}.json`)
+//   return content.data
+// }
+
+const listarSingle = async (slug) => {
+  const content = await axios.get(`${baseURL}/posts.json`)
+  const key = Object.keys(content.data).find(key => {
+    return content.data[key].slug === slug
+  })
+  return content.data[key]
 }
+
 const listar = async (key) => {
   const content = await axios.get(`${baseURL + key}.json`)
 

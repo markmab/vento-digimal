@@ -7,7 +7,7 @@ const novaForm = async (req, res) => {
   res.render('posts/novo-post', { reviewers })
 }
 const nova = async (req, res) => {
-  await api.create('posts/' + req.body.reviewer, {
+  await api.create('posts/', {
     'titulo': req.body.titulo,
     'subTitulo': req.body.subTitulo,
     'slug': req.body.slug,
@@ -22,7 +22,8 @@ const nova = async (req, res) => {
     'applicationName': req.body.applicationName,
     'XUACompatible': req.body.XUACompatible,
     'refresh': req.body.refresh,
-    'data': dateFormat(now, 'yyyy-dd-mm')
+    'data': dateFormat(now, 'dd-mm-yyyy'),
+    'reviewer': req.body.reviewer
   })
   res.redirect('/posts/reviewer/' + req.body.reviewer)
 }
@@ -36,9 +37,7 @@ const list = async (req, res) => {
   }
 }
 const listSingle = async (req, res) => {
-  const post = await api.listarSingle(req.params.reviewer, req.params.id)
-
-  // res.send(post)
+  const post = await api.listarSingle(req.params.slug)
   res.render('posts/single-post', { post })
 }
 const listPosts = async (req, res) => {

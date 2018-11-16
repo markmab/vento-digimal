@@ -12,9 +12,9 @@ const nova = async (req, res) => {
     'nome': req.body.nome,
     'tipo': req.body.tipo,
     'ip': leadIp,
-    'data_hora': dateFormat(now, 'yyyy-dd-mm hh:mm:ss')
+    'data_hora': dateFormat(now, 'yyyy-mm-dd hh:mm:ss')
   })
-  res.redirect('/leads/nova')
+  res.redirect(req.get('referer'))
   // req.connection.remoteAddress
 }
 const novaForm = async (req, res) => {
