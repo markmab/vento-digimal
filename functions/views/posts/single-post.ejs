@@ -14,12 +14,15 @@
 <!--POST-->
 <div class="post">
   <div class="post__content">
+    <!-- <div class="post__review">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, quas dolor! Quam ex et modi expedita quasi cum fugit? Recusandae debitis doloribus aut optio maiores earum, sed numquam tenetur sit eveniet. Deserunt, iusto. Blanditiis, atque. Voluptate totam harum optio distinctio, aut error aspernatur dicta voluptatem, rem eligendi deleniti minima at!
+    </div> -->
     <p><%- post.subTitulo %></p>
     <p class="post__published-when">Publicado em <%- post.data %></p>
     <%- post.conteudo %>
   </div>
 </div>
 
-<a id="lead-form" href="#lead-form-popup" class="btn btn-primary lead__button" type="submit">CADASTRE-SE</a>
+<%- include('../leads/feed') %>
 <%- include('../leads/form') %>
 <%- include('../footer-blog') %>

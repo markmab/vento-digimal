@@ -41,13 +41,9 @@ const listSingle = async (req, res) => {
   res.render('posts/single-post', { post })
 }
 const listPosts = async (req, res) => {
-  const reviewer = req.params.reviewer
   const posts = await api.listarPosts(req.params.id)
-  if (posts) {
-    res.render('posts/index', { posts, reviewer })
-  } else {
-    res.render('posts/index', { posts: [] })
-  }
+
+  res.render('index', { posts })
 }
 const excluir = async (req, res) => {
   await api.apagar('posts/' + req.params.reviewer, req.params.id)

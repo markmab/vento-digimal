@@ -7,14 +7,14 @@ const baseURL = 'https://nome-temporario.firebaseio.com/'
 // const auth = 'DxUm3P6op4Go8Opzb0bYA1YPggXZ7zQHP677gTbS'
 
 const listarPosts = async (id) => {
-  const content = await axios.get(`${baseURL}posts${(id) ? '/' + id : id}.json`)
+  const content = await axios.get(`${baseURL}posts.json`)
   if (content.data) {
     const objetos = Object.keys(content.data).map(key => {
       return {
-        id: key,
         ...content.data[key]
       }
     })
+    console.log(objetos)
     return objetos
   }
   return []

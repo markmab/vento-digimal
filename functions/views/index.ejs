@@ -1,5 +1,33 @@
 <%- include('header-blog') %>
 
-HOME
+<!--BANNER-->
 
+<div class="banner">
+  <h1>
+    <span>      
+      Soprando em direção ao resultado! 
+    </span> 
+  </h1>
+</div>
+
+<div class="post-list">
+  <% posts.forEach(post => { %>
+    <div class="post-list__post">
+      <a href="/posts/<%= post.slug %>" target="_SELF">
+        <img src="/static/img/blog-post/<%= post.slug %>.jpg" alt="<%= post.titulo %>">
+      </a>
+      <div class="post-list__content">
+        <span>Postado em: <%= post.data %></span>
+        <h2><%= post.titulo %></h2>
+        <h3><%= post.subTitulo.substr(0, 62) %>&#8230;</h3>
+      </div>
+      <a href="/posts/<%= post.slug %>" target="_SELF" class="post-list__link">
+        Ler Artigo
+      </a>
+    </div>
+  <% }) %>
+</div>
+<%- %>
+<%- include('leads/feed') %>
+<%- include('leads/form') %>
 <%- include('footer-blog') %>

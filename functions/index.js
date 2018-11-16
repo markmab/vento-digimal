@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const reviewers = require('./routes/reviewers')
+const postsCtrl = require('./controllers/posts')
 const posts = require('./routes/posts')
 const leads = require('./routes/leads')
 
@@ -19,11 +20,7 @@ app.get('/timestamp', (request, response) => {
   response.send(`${Date.now()}`)
 })
 
-const resolver = (req, res) => {
-  res.render('index')
-}
-
-app.get('/', resolver)
+app.get('/', postsCtrl.listPosts)
 
 app.use('/posts', posts)
 app.use('/reviewers', reviewers)
